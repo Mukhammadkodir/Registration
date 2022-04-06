@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+
+package register;
+
+service RegisterService {
+  rpc Create(User) returns (User);
+  rpc Login(Loginn) returns (User);
+  rpc Get(ById) returns (User);
+}
+
+message Empty {}
+
+message User {
+    string id = 1;
+    string name = 2;
+    string password = 3;
+    string access_token = 4;
+    string refresh_token = 5;
+}
+
+message Loginn{
+  string password = 1;
+  string name = 2;
+}
+
+message ById {
+  string id = 1;
+}
